@@ -1,0 +1,28 @@
+.FlightSearch {
+  h1 {
+    text-align: center;
+    font-size: 9vw;
+  }
+  &__result {
+    border-top: 1px solid gainsboro;
+    &__error {
+      color: red;
+      padding: 10px;
+    }
+    &__flight {
+      padding: 10px;
+      &__price {
+        color: red;
+        strong {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: cadetblue;
+    color: white;
+    width: 100%;
+  }
+}
