@@ -1,5 +1,6 @@
-## About Flight Search API ##
-This project is about flight search engine that allows you to search for flights and calculates CO2 emissions based on the fligh distance.  This document demonstrates how the project has been developed and which technologies were used to implement the project.  We assume the one-way flight only holds few information such as `departure city, destination city, and date` whereas, the return flight details are `flight number, airline, departure time, arrival time, price, and CO2 emissions`.
+# About Flight Search App #
+This project is about flight search engine that allows you to search for flights and calculates CO2 emissions based on the fligh distance.  
+You will be able to search for flights based on the departure city, destination city and flight date. 
 
 
 ## Prerequisites ##
@@ -23,32 +24,30 @@ Install and run the project using the following instructions on your local machi
   - Insert the data into the table from file: `./database/db_insert.sql`  
 	
 3. Run & install the project parts
-  - Frontend: 
-    - `cd frontend && npm i`
-    - Run the project `npm run dev`
-  - Backend:
-    - From the projects root folder `flight-search-project` go to backend folder `cd backend`
-    - Run `npm i` then `npm run start:dev`
+    - Frontend: 
+      - `cd frontend && npm i`
+      - Run the project `npm run dev`
+    - Backend:
+      - From the projects root folder `flight-search-project` go to backend folder `cd backend`
+      - Run `npm i` then `npm run start:dev`
 
 4. Access the frontend react app in browser with: `http://localhost:5173`
 5. Access the backend node app (apollo server) in browser with: `http://localhost:4000/`
-  - To view an example image of the sandbox with relevant queries, click the image: `./backend/graphql-sandbox-screenshot.JPG`
+    - To view an example image of the sandbox with relevant queries, click the image: `./backend/graphql-sandbox-screenshot.JPG`
+6. Redis should be running or otherwise install and run redis or see future improvement for details to run it in the docker environment.
 
-# NOTE
-- Redis should be running or otherwise install and run redis or see future improvement for details to run it in the docker environment.
-
-## Architecture Overview ##
+# Architecture Overview #
 The Flight Search application uses the following components on each section of the project.
  
-# Frontend
+## Frontend
   - `React` framework used to provide UI to the application for showing the flight search form and the search results
 	- `Appolo Client` to communicate with the Appolo Server on the backend
 
-# Backend API
+## Backend API
   - `Node JS` with `Typescript` used for better code quality and project maintainability
 	- `Apollo Server` has been used to handle the Apollo Client requests
     
-# Database 
+## Database 
   - `PostgreSql` Database used to store flight details 
 	- The PostgreSQL uses the following single table, however in future further tables can also be added to the database.
   ```sql
@@ -64,16 +63,16 @@ The Flight Search application uses the following components on each section of t
       price FLOAT
   ```
 
-# Cache Data
+## Cache Data
 - On the backend, a Redis cache tool used to improve performance by caching the database queries for the API in memory
 
 
-## Scalability ##
+# Scalability #
 - Caching tool used to reduce load on the database
 - Projects are divided into two distinct, self-contained entities, each operating independently of the other
 
 
-## Future Improvements ##
+# Future Improvements #
 - Frontend: 
   - Provide more css for better styling the page
   - Provide labels to understand each form options
